@@ -38,7 +38,7 @@ async function renderManyPokemons() {
 
   for (let i = 1; i <= limitofPokemons; i++) {
     const pokemon = await getSinglePokemonFromApi(i);
-    pokemonContainerRef.innerHTML += getHTMLforPokemon(singlePokemon);
+    pokemonContainerRef.innerHTML += getHTMLforPokemon(pokemon);
   }
 }
 
