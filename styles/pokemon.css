@@ -86,6 +86,10 @@
   background-color: rgb(208, 208, 207);
 }
 
+.pokemon:hover .pokemon-images.pokemon-bg-dragon {
+  background-color: rgb(49, 71, 132);
+}
+
 
 .pokemon:hover .pokemon-names.pokemon-bg-grass {
   color: rgb(77, 125, 77);
@@ -109,5 +113,50 @@
 
 .pokemon:hover .pokemon-names.pokemon-bg-poison {
   color: rgb(166, 114, 175);
+}
+
+.pokemon:hover .pokemon-names.pokemon-bg-electric {
+  color: rgb(189, 210, 0);
+}
+
+.pokemon:hover .pokemon-names.pokemon-bg-ground {
+  color: rgb(189, 210, 0);
+}
+
+.pokemon:hover .pokemon-names.pokemon-bg-fairy {
+  color: rgb(251, 217, 254);
+}
+
+.pokemon:hover .pokemon-names.pokemon-bg-fighting {
+  color: rgb(165, 73, 45);
+}
+
+.pokemon:hover .pokemon-names.pokemon-bg-psychic {
+  color: rgb(117, 139, 19);
+}
+
+.pokemon:hover .pokemon-names.pokemon-bg-rock {
+  color: rgb(102, 104, 95);
+}
+
+.pokemon:hover .pokemon-names.pokemon-bg-ghost {
+  color: rgb(208, 208, 207);
+}
+
+.pokemon:hover .pokemon-names.pokemon-bg-dragon {
+  color: rgb(49, 71, 132);
+}
+
+@media (max-width: 614px) {
+    .pokemon-container{
+        justify-content: center;
+        padding: 16px;
+    }
+}
+
+@media (max-width: 598px) {
+    .pokemon-container{
+        padding: 12px;
+    }
 }
 

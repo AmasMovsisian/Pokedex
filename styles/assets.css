@@ -71,3 +71,10 @@ a{
     opacity: 0.7;
 }
 
+@media (max-width: 500px) {
+    .search-BTN{
+        margin-top: 16px;
+        margin-bottom: 6px;
+    }
+}
+

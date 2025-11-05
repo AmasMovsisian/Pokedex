@@ -1,4 +1,5 @@
 let limitofPokemons = 24;
+let loadedPokemons = 0;
 
 async function init() {
   const data = await getAllPokemonFromApi();
@@ -34,12 +35,13 @@ function renderAllPokemon(data) {
 
 async function renderManyPokemons() {
   let pokemonContainerRef = document.getElementById("pokemonContainer");
-  pokemonContainerRef.innerHTML = "";
+  // pokemonContainerRef.innerHTML = "";
 
-  for (let i = 1; i <= limitofPokemons; i++) {
+  for (let i = loadedPokemons + 1; i <= limitofPokemons; i++) {
     const pokemon = await getSinglePokemonFromApi(i);
     pokemonContainerRef.innerHTML += getHTMLforPokemon(pokemon);
   }
+    loadedPokemons = limitofPokemons;
 }
 
 function loadMorePokemon() {
