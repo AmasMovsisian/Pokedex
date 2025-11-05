@@ -74,7 +74,7 @@ a{
 @media (max-width: 500px) {
     .search-BTN{
         margin-top: 16px;
-        margin-bottom: 6px;
+        margin-bottom: 32px;
     }
 }
 
