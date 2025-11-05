@@ -5,22 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/assets.css">
-    <script src="./script.js"></script>
+    <link rel="stylesheet" href="./styles/pokemon.css">
+    <script src="./JavaScript/script.js" defer></script>
+    <script src="./JavaScript/template.js"></script>
     <title>Pokedex</title>
     
 </head>
 <body onload="init()">
 
-    <header>
-        <h1>Pokedex</h1>
-        <input type="text" placeholder="Search">
+    <header> 
+        <h1><a class="headlining" href="./index.html">Pokedex</a></h1>
+        <input class="search-BTN" id="searchBTN" type="text" placeholder="Search">
     </header>
 
         <main>
 
             <section class="pokemon-container" id="pokemonContainer">
-
             </section>
+
+            <div class="button-parent">
+            <button onclick="loadMorePokemon()" class="load-more-btn" id="loadMoreBTN">Load more</button>
+            </div>
+            
 
         </main>
 
