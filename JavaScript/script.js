@@ -1,50 +1,65 @@
 let limitofPokemons = 24;
 let loadedPokemons = 0;
 
-async function init() {
-  const data = await getAllPokemonFromApi();
-  renderAllPokemon(data);
+let pokemonNamesJSON;
+let pokemonNames;
+let singlePokemonsDataJSON; // Main Api JSon where all names are and results
 
-  const singlePokemon = await getSinglePokemonFromApi(1);
-  renderManyPokemons();
+
+let singlePokemon; // All abalities for one Pokemon
+let singlePokemonType; // The type of Single Pokemon, like grass, poision!
+
+let pokemonContainerRef = document.getElementById('pokemonContainer');
+
+async function init() {
+  await renderPokemonNames();
 }
 
-async function getAllPokemonFromApi() {
+
+async function fetchPokemonNames(indexOfName) {
   try {
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limitofPokemons}`);
-    const data = await response.json();
-    return data;
+    let response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limitofPokemons}`);
+    pokemonNamesJSON = await response.json();
+    let pokemonNamesData = pokemonNamesJSON.results[indexOfName].name;
+    return pokemonNamesData;
   } catch (error) {
     console.log(error);
   }
 }
 
-async function getSinglePokemonFromApi(id) {
+async function fetchSinglePokemonsData(id) {
   try {
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
-    const data = await response.json();
-    return data;
+   let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+   singlePokemonsDataJSON = await response.json();
+   return singlePokemonsDataJSON;  
   } catch (error) {
-    console.error(error);
+    console.log(error);
   }
+
 }
 
-function renderAllPokemon(data) {
-  console.log("Alle Pokémon:", data);
-}
+async function renderPokemonNames() {
+  for (let i = loadedPokemons; i < limitofPokemons; i++) {
+   pokemonNames = await fetchPokemonNames(i);
+   singlePokemon = await fetchSinglePokemonsData(i + 1);
 
-async function renderManyPokemons() {
-  let pokemonContainerRef = document.getElementById("pokemonContainer");
-  // pokemonContainerRef.innerHTML = "";
-
-  for (let i = loadedPokemons + 1; i <= limitofPokemons; i++) {
-    const pokemon = await getSinglePokemonFromApi(i);
-    pokemonContainerRef.innerHTML += getHTMLforPokemon(pokemon);
+   singlePokemonType = singlePokemon.types[0].type.name;
+   pokemonContainerRef.innerHTML += getHTMLpokemonsMainContent();
   }
-    loadedPokemons = limitofPokemons;
+  loadedPokemons = limitofPokemons;
+  //For me to watch JSON Infos
+  console.log(await pokemonNamesJSON);
+  console.log(await singlePokemon);
+  console.log(await singlePokemonType);
+  //
 }
 
-function loadMorePokemon() {
-    limitofPokemons += 16;
-    renderManyPokemons();
+async function loadMorePokemons() {
+  limitofPokemons += 16;
+  await renderPokemonNames();
 }
+
+// function showDialog() {
+//     dialog.showModal();
+// }
+

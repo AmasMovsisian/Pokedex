@@ -1,34 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/assets.css">
     <link rel="stylesheet" href="./styles/pokemon.css">
+    <link rel="stylesheet" href="./styles/style-dialog.css">
     <script src="./JavaScript/script.js" defer></script>
     <script src="./JavaScript/template.js"></script>
     <title>Pokedex</title>
-    
+
 </head>
+
 <body onload="init()">
 
-    <header> 
+    <header>
         <h1><a class="headlining" href="./index.html">Pokedex</a></h1>
         <input class="search-BTN" id="searchBTN" type="text" placeholder="Search">
     </header>
 
-        <main>
+    <main>
 
-            <section class="pokemon-container" id="pokemonContainer">
-            </section>
+        <section class="pokemon-container" id="pokemonContainer">
+        </section>
 
-            <div class="button-parent">
-            <button onclick="loadMorePokemon()" class="load-more-btn" id="loadMoreBTN">Load more</button>
+        <div class="button-parent">
+            <button onclick="loadMorePokemons()" class="load-more-btn" id="loadMoreBTN">Load more</button>
+        </div>
+
+        <dialog id="dialogContainer">
+            <div class="dialog-inner">
+                <img class="images" id="dialogImage" src="" alt="Image">
+                <p id="dialogName"></p>
+                <div>zwei buttons</div>
+                <span>
+                    <p id="dialogHeight">height</p>
+                    <p id="dialogWeight">weight</p>
+                    <p id="dialogBaseExp">Base Experience</p>
+                    <p id="dialogAbilities">Abilities</p>
+                </span>
+                <button onclick="closeDialog()">Close</button>
             </div>
-            
+        </dialog>
 
-        </main>
+
+
+    </main>
 
 </body>
+
 </html>
