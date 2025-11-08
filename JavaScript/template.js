@@ -4,15 +4,10 @@ function getHTMLpokemonsMainContent() {
    <img 
       class="pokemon-images pokemon-bg-${singlePokemonType}"
       src="${singlePokemon.sprites.other['official-artwork'].front_default}">
-
-          <span onclick="showDialog()" class="pokemon pokemon-BTN-${singlePokemonType}">
-          ${singlePokemonType}
-          </span>
-   </div>
-   `;
+      
+      <span onclick="showDialog(${singlePokemon.id - 1})" 
+            class="pokemon pokemon-BTN-${singlePokemonType}">
+        ${singlePokemonType}
+      </span>
+   </div>`;
 }
-
-  // function getHTMLDialog() {
-    
-  // }
-    
