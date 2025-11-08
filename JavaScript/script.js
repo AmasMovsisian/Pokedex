@@ -67,30 +67,37 @@ function getHTMLDialog(i) {
   <div class="dialog-container">
 
     <div class="dialog-header">
-      <span>Pokemon Id: ${singlePokemonArray[i].id}</span>
+
+      <span><strong>Pokemon Id: ${singlePokemonArray[i].id}</strong></span>
       <button class="dialog-close-BTN" onclick="closeDialog()">Close</button>
-
-      <button class="dialog-prev" onclick="showPrev(${i})">←</button>
-        <button class="dialog-next" onclick="showNext(${i})">→</button>
-
     </div>
+
+    <div class="dialog-sliders">
+      <button class="dialog-prev" onclick="showPrev(${i})">←</button>
+      <button class="dialog-next" onclick="showNext(${i})">→</button>
+    </div>
+
+ 
 
       <div class="dialog-hero">
         <p class="dialog-pokemon-name">
             ${singlePokemonArray[i].name}
         </p>
-        <img class="dialog-img"
+        <img class="dialog-img dialog-bg-${singlePokemonArray[i].types[0].type.name}"
             src="${singlePokemonArray[i].sprites.other['official-artwork'].front_default}">
-          <span class="dialog-type">
+          <span class="dialog-type dialog-bg-${singlePokemonArray[i].types[0].type.name}">
             ${singlePokemonArray[i].types[0].type.name}
           </span>
       </div>
-      <div class ="main-infos">
-        <p>Height : 0.${singlePokemonArray[i].height} m </p>
-        <p>Weight : ${singlePokemonArray[i].weight} kg</p>
-        <p>Base experience : ${singlePokemonArray[i].base_experience}</p>
-        <p>Abilities : ${singlePokemonArray[i].abilities[0].ability.name}</p>
-      </div>
+
+          <div class="main-infos" ><strong>
+            <p>Height : 0.${singlePokemonArray[i].height} m </p>
+            <p>Weight : ${singlePokemonArray[i].weight} kg</p>
+            <p>Base experience : ${singlePokemonArray[i].base_experience}</p>
+            <p>Abilities : ${singlePokemonArray[i].abilities[0].ability.name}</p>
+          </strong></div>
+
+
   </div>`;
 }
 
@@ -98,6 +105,12 @@ function showDialog(i) {
   let dialogRef = document.getElementById("dialogContainer");
   openDialog(i);
   dialogRef.showModal();
+
+    dialogRef.onclick = function(outside) {
+    if (outside.target === dialogRef) {
+      closeDialog();
+    }
+  };
 }
 
 function openDialog(i) {
