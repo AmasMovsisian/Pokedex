@@ -179,9 +179,13 @@ a:hover {
 
 
 @media (max-width: 500px) {
-    header {
+    .limitation {
         flex-direction: column;
         padding: 0;
+    }
+
+    header{
+        width: 100%;
     }
 
     h1 {
