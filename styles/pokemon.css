@@ -103,9 +103,6 @@
   background-color: rgb(72, 65, 60);
 }
 
-
-
-
 .pokemon:hover .pokemon-names.pokemon-bg-grass {
   color: rgb(77, 125, 77);
 }
@@ -174,18 +171,15 @@
   color: rgb(72, 65, 60);
 }
 
-
-
 .pokemon-BTN {
   padding: 8px 20px;
   border-radius: 12px;
   font-weight: bold;
-  font-family: 'Segoe UI', Tahoma, sans-serif;
+  font-family: "Segoe UI", Tahoma, sans-serif;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   color: #fff;
-
 }
 
 .pokemon-BTN-grass {
@@ -374,7 +368,6 @@
   transform: translateY(-2px);
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.6);
 }
-
 
 @media (max-width: 614px) {
   .pokemon-container {

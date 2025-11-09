@@ -1,232 +1,294 @@
 dialog {
-    border-radius: 6px;
-    outline: none;
-    padding: 12px;
-    background-color: rgba(24, 24, 24, 1);
-    color: rgba(230, 230, 230, 1);
-    border: none;
-    border: solid;
-    border-width: 1px;
-    border-color: rgba(218, 165, 32, 0.5);
+  border-radius: 6px;
+  outline: none;
+  padding: 12px;
+  background-color: rgba(24, 24, 24, 1);
+  color: rgba(230, 230, 230, 1);
+  border: none;
+  border: solid;
+  border-width: 1px;
+  border-color: rgba(218, 165, 32, 0.5);
 }
 
 dialog::backdrop {
-    background-color: rgba(0, 0, 0, 0.5);
-    /* dark overlay */
-    backdrop-filter: blur(3px);
-    /* blur effect */
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
 }
 
 .dialog-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .dialog-header {
-    width: 100%;
-    display: flex;
-    flex: 1;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  width: 100%;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .dialog-hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .dialog-close-BTN {
-    border: none;
-    display: inline-block;
-    width: 100px;
-    font-weight: bold;
-    font-size: 16px;
-    text-transform: uppercase;
-    color: rgb(24, 24, 24);
-    background: linear-gradient(145deg, rgba(218, 165, 32, 1), rgba(255, 215, 0, 1));
-    border: 2px solid rgba(255, 215, 0, 1);
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-align: center;
+  border: none;
+  display: inline-block;
+  width: 100px;
+  font-weight: bold;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: rgb(24, 24, 24);
+  background: linear-gradient(
+    145deg,
+    rgba(218, 165, 32, 1),
+    rgba(255, 215, 0, 1)
+  );
+  border: 2px solid rgba(255, 215, 0, 1);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
 }
 
 .dialog-close-BTN:hover {
-    background: linear-gradient(145deg, rgba(255, 215, 0, 1), rgba(218, 165, 32, 1));
-    color: rgb(7, 7, 7);
-    transform: scale(1.05);
-    opacity: 0.7;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 215, 0, 1),
+    rgba(218, 165, 32, 1)
+  );
+  color: rgb(7, 7, 7);
+  transform: scale(1.05);
+  opacity: 0.7;
 }
 
 .dialog-sliders {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    gap: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  gap: 12px;
 }
 
 .dialog-sliders button {
-    border: none;
-    display: inline-block;
-    width: 100px;
-    font-weight: bold;
-    font-size: 16px;
-    text-transform: uppercase;
-    color: rgb(24, 24, 24);
-    background: linear-gradient(145deg, rgb(159, 121, 23), rgba(255, 215, 0, 1));
-    border: 2px solid rgba(255, 215, 0, 1);
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-align: center;
+  border: none;
+  display: inline-block;
+  width: 100px;
+  font-weight: bold;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: rgb(24, 24, 24);
+  background: linear-gradient(145deg, rgb(159, 121, 23), rgba(255, 215, 0, 1));
+  border: 2px solid rgba(255, 215, 0, 1);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
 }
 
 .dialog-sliders button:hover {
-    background: linear-gradient(145deg, rgba(255, 215, 0, 1), rgba(218, 165, 32, 1));
-    color: rgb(7, 7, 7);
-    transform: scale(1.05);
-    opacity: 0.7;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 215, 0, 1),
+    rgba(218, 165, 32, 1)
+  );
+  color: rgb(7, 7, 7);
+  transform: scale(1.05);
+  opacity: 0.7;
 }
 
 .dialog-sliders button:first-child {
-    margin-right: auto;
+  margin-right: auto;
 }
 
 .dialog-sliders button:last-child {
-    margin-left: auto;
+  margin-left: auto;
 }
 
 .dialog-pokemon-name {
-    font-weight: bold;
-    font-size: 18px;
-    text-transform: uppercase;
+  font-weight: bold;
+  font-size: 18px;
+  text-transform: uppercase;
 }
 
 .dialog-img {
-    width: 360px;
-    height: auto;
-    margin-bottom: 16px;
+  width: 360px;
+  height: auto;
+  margin-bottom: 16px;
 }
 
 .dialog-type {
-    text-align: center;
-    text-transform: uppercase;
-    color: white;
-    padding: 0;
-    width: 100%;
-    font-weight: bold;
-    border-radius: 6px;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  padding: 0;
+  width: 100%;
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+.tabs-btns {
+  margin-top: 32px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  flex: 1;
+}
+
+.tab-btn-main-info,
+.tab-btn-extra-info {
+  box-sizing: border-box;
+  font-size: 16px;
+  width: 100%;
+  border: none;
+  padding: 12px 12px;
+  cursor: pointer;
+  color: rgb(33, 25, 6);
+}
+
+.tab-content {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  color: rgb(220, 210, 180);
+}
+
+.tab-btn-main-info {
+  transition: all 0.1s ease-in-out;
+  background: linear-gradient(to right, rgb(255, 215, 0), rgb(184, 131, 39));
+  border-radius: 6px 0 0 6px;
+}
+
+.tab-btn-extra-info {
+  transition: all 0.1s ease-in-out;
+  background: linear-gradient(to right, rgb(184, 131, 39), rgb(255, 215, 0));
+  border-radius: 0 6px 6px 0;
+}
+
+.tab-btn-main-info:hover {
+  opacity: 0.9;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: inset 0 -3px 0 0 rgb(255, 221, 0);
+}
+
+.tab-btn-extra-info:hover {
+  opacity: 0.9;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: inset 0 -3px 0 0 rgb(255, 221, 0);
+}
+
+strong {
+  color: goldenrod;
 }
 
 .main-infos {
-    text-align: center;
-    text-transform: uppercase;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .dialog-bg-grass {
-    background: linear-gradient(160deg, rgb(10, 30, 10), rgb(77, 160, 77));
+  background: linear-gradient(160deg, rgb(10, 30, 10), rgb(77, 160, 77));
 }
 
 .dialog-bg-fire {
-    background: linear-gradient(160deg, rgb(60, 10, 10), rgb(255, 90, 60));
+  background: linear-gradient(160deg, rgb(60, 10, 10), rgb(255, 90, 60));
 }
 
 .dialog-bg-water {
-    background: linear-gradient(160deg, rgb(10, 30, 50), rgb(116, 210, 230));
+  background: linear-gradient(160deg, rgb(10, 30, 50), rgb(116, 210, 230));
 }
 
 .dialog-bg-bug {
-    background: linear-gradient(160deg, rgb(50, 50, 10), rgb(180, 200, 60));
+  background: linear-gradient(160deg, rgb(50, 50, 10), rgb(180, 200, 60));
 }
 
 .dialog-bg-normal {
-    background: linear-gradient(160deg, rgb(40, 25, 10), rgb(150, 110, 60));
+  background: linear-gradient(160deg, rgb(40, 25, 10), rgb(150, 110, 60));
 }
 
 .dialog-bg-poison {
-    background: linear-gradient(160deg, rgb(50, 20, 50), rgb(190, 140, 200));
+  background: linear-gradient(160deg, rgb(50, 20, 50), rgb(190, 140, 200));
 }
 
 .dialog-bg-electric {
-    background: linear-gradient(160deg, rgb(60, 60, 10), rgb(255, 230, 20));
+  background: linear-gradient(160deg, rgb(60, 60, 10), rgb(255, 230, 20));
 }
 
 .dialog-bg-ground {
-    background: linear-gradient(160deg, rgb(50, 50, 20), rgb(220, 230, 50));
+  background: linear-gradient(160deg, rgb(50, 50, 20), rgb(220, 230, 50));
 }
 
 .dialog-bg-fairy {
-    background: linear-gradient(160deg, rgb(100, 60, 100), rgb(255, 220, 255));
+  background: linear-gradient(160deg, rgb(100, 60, 100), rgb(255, 220, 255));
 }
 
 .dialog-bg-fighting {
-    background: linear-gradient(160deg, rgb(40, 15, 15), rgb(200, 90, 60));
+  background: linear-gradient(160deg, rgb(40, 15, 15), rgb(200, 90, 60));
 }
 
 .dialog-bg-psychic {
-    background: linear-gradient(160deg, rgb(20, 30, 0), rgb(140, 180, 40));
+  background: linear-gradient(160deg, rgb(20, 30, 0), rgb(140, 180, 40));
 }
 
 .dialog-bg-rock {
-    background: linear-gradient(160deg, rgb(20, 20, 20), rgb(130, 130, 120));
+  background: linear-gradient(160deg, rgb(20, 20, 20), rgb(130, 130, 120));
 }
 
 .dialog-bg-ghost {
-    background: linear-gradient(160deg, rgb(40, 40, 40), rgb(230, 230, 230));
+  background: linear-gradient(160deg, rgb(40, 40, 40), rgb(230, 230, 230));
 }
 
 .dialog-bg-dragon {
-    background: linear-gradient(160deg, rgb(10, 20, 50), rgb(80, 110, 180));
+  background: linear-gradient(160deg, rgb(10, 20, 50), rgb(80, 110, 180));
 }
 
 .dialog-bg-ice {
-    background: linear-gradient(160deg, rgb(120, 130, 150), rgb(240, 245, 255));
+  background: linear-gradient(160deg, rgb(120, 130, 150), rgb(240, 245, 255));
 }
 
 .dialog-bg-dark {
-    background: linear-gradient(160deg, rgb(10, 10, 20), rgb(60, 65, 90));
+  background: linear-gradient(160deg, rgb(10, 10, 20), rgb(60, 65, 90));
 }
 
 .dialog-bg-steel {
-    background: linear-gradient(160deg, rgb(30, 30, 40), rgb(100, 95, 90));
+  background: linear-gradient(160deg, rgb(30, 30, 40), rgb(100, 95, 90));
 }
 
-
 .dialog-img {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 6px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 6px;
 }
 
 .dialog-img:hover {
-    transform: scale(1.03);
+  transform: scale(1.03);
 }
 
 @media (max-width: 420px) {
-
-    .dialog-img {
-        width: 320px;
-        height: auto;
-    }
-
+  .dialog-img {
+    width: 320px;
+    height: auto;
+  }
 }
 
 @media (max-width: 376px) {
-
-    .dialog-img {
-        width: 280px;
-        height: auto;
-    }
-
+  .dialog-img {
+    width: 280px;
+    height: auto;
+  }
 }

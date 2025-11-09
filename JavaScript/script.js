@@ -3,10 +3,10 @@ let loadedPokemons = 0;
 
 let pokemonNamesJSON;
 let pokemonNames;
-let singlePokemonsDataJSON; // Main Api JSon where all names are and results
+let singlePokemonsDataJSON;
 
-let singlePokemonArray = []; // All abalities for one Pokemon
-let singlePokemonType; // The type of Single Pokemon, like grass, poision!
+let singlePokemonArray = [];
+let singlePokemonType;
 
 let pokemonContainerRef = document.getElementById("pokemonContainer");
 
@@ -14,6 +14,7 @@ async function init() {
   await renderPokemonNames();
   await renderPokemonsDialog();
 }
+
 
 async function fetchPokemonNames(indexOfName) {
   try {
@@ -28,6 +29,7 @@ async function fetchPokemonNames(indexOfName) {
   }
 }
 
+
 async function fetchSinglePokemonsData(id) {
   try {
     let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
@@ -37,6 +39,7 @@ async function fetchSinglePokemonsData(id) {
     console.log(error);
   }
 }
+
 
 async function renderPokemonNames() {
   showLoader();
@@ -50,11 +53,10 @@ async function renderPokemonNames() {
   }
   loadedPokemons = limitofPokemons;
   hideLoader();
-  //For me to watch JSON Infos
   console.log(await pokemonNamesJSON);
   console.log(await singlePokemon);
-  //
 }
+
 
 function renderPokemonsDialog() {
   for (let i = 0; i < singlePokemonArray.length; i++) {
@@ -62,14 +64,16 @@ function renderPokemonsDialog() {
   }
 }
 
+
 function showDialog(i) {
   let dialogRef = document.getElementById("dialogContainer");
   openDialog(i);
+  document.body.style.overflow = 'hidden'
   dialogRef.showModal();
-
   dialogRef.onclick = function (outside) {
     if (outside.target === dialogRef) {
       closeDialog();
+      document.body.style.overflow = ''
     }
   };
 }
@@ -79,10 +83,13 @@ function openDialog(i) {
   dialogRef.innerHTML = getHTMLDialog(i);
 }
 
+
 function closeDialog() {
   let dialogRef = document.getElementById("dialogContainer");
   dialogRef.close();
+  document.body.style.overflow = ''
 }
+
 
 function showNext(currentIndex) {
   let nextIndex = currentIndex + 1;
@@ -92,6 +99,7 @@ function showNext(currentIndex) {
   openDialog(nextIndex);
 }
 
+
 function showPrev(currentIndex) {
   let prevIndex = currentIndex - 1;
   if (prevIndex < 0) {
@@ -100,6 +108,7 @@ function showPrev(currentIndex) {
   openDialog(prevIndex);
 }
 
+
 async function loadMorePokemons() {
   showLoader();
   limitofPokemons += 14;
@@ -107,10 +116,71 @@ async function loadMorePokemons() {
   hideLoader();
 }
 
+
 function showLoader() {
   document.getElementById("fullscreenLoader").style.display = "flex";
 }
 
+
 function hideLoader() {
   document.getElementById("fullscreenLoader").style.display = "none";
+}
+
+
+function searchPokemon() {
+  let inputRef = document.getElementById("searchBTN");
+  let searchText = inputRef.value.toLowerCase().trim();
+  if (searchText.length < 3) {
+    showAllPokemons();
+    document.getElementById('loadMoreBTN').style.display = ""
+    return;
+  }
+  let filteredPokemons = singlePokemonArray.filter(pokemon =>
+    pokemon.name.toLowerCase().includes(searchText)
+  );
+  renderFilteredPokemons(filteredPokemons);
+}
+
+
+function renderFilteredPokemons(filteredArray) {
+  let loadMoreBtn = document.getElementById('loadMoreBTN');
+  loadMoreBtn.style.display = "none";
+  if (filteredArray.length === 0) {
+    pokemonContainerRef.innerHTML = getHTMLNoPokemonFounded();
+    return;
+  }
+  pokemonContainerRef.innerHTML = "";
+  for (let i = 0; i < filteredArray.length; i++) {
+    let pokemon = filteredArray[i];
+    singlePokemonType = pokemon.types[0].type.name;
+    singlePokemon = pokemon;
+    pokemonNames = pokemon.name;
+    pokemonContainerRef.innerHTML += getFilteredPokemonsHTML(pokemon);
+  }
+}
+
+
+function showAllPokemons() {
+  pokemonContainerRef.innerHTML = "";
+  for (let i = 0; i < singlePokemonArray.length; i++) {
+    singlePokemon = singlePokemonArray[i];
+    singlePokemonType = singlePokemon.types[0].type.name;
+    pokemonNames = singlePokemon.name;
+    pokemonContainerRef.innerHTML += getHTMLpokemonsMainContent();
+  }
+}
+
+
+function showDialogById(id) {
+  let index = singlePokemonArray.findIndex(pokemon => pokemon.id === id);
+  if (index !== -1) {
+    showDialog(index);
+  }
+}
+
+function showTab(tab, i, btn) {
+  document.getElementById(`main-info-${i}`).style.display = tab === 'main' ? 'block' : 'none';
+  document.getElementById(`extra-info-${i}`).style.display = tab === 'extra' ? 'block' : 'none';
+  btn.parentNode.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
 }
