@@ -171,125 +171,225 @@
   color: rgb(72, 65, 60);
 }
 
-.pokemon-BTN {
-  padding: 8px 20px;
-  border-radius: 12px;
-  font-weight: bold;
-  font-family: "Segoe UI", Tahoma, sans-serif;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  color: #fff;
-}
-
-.pokemon-BTN-grass,
-.pokemon-BTN-fire,
-.pokemon-BTN-water,
-.pokemon-BTN-poison,
-.pokemon-BTN-electric,
-.pokemon-BTN-bug,
-.pokemon-BTN-normal,
-.pokemon-BTN-ground,
-.pokemon-BTN-fairy,
-.pokemon-BTN-fighting,
-.pokemon-BTN-psychic,
-.pokemon-BTN-rock,
-.pokemon-BTN-ghost,
-.pokemon-BTN-dragon,
-.pokemon-BTN-ice,
-.pokemon-BTN-dark,
-.pokemon-BTN-steel {
+.pokemon-BTN-grass {
+    border: 2px solid rgba(12,108,12);
     display: flex;
-    border-radius: 6px;
     justify-content: center;
     align-items: center;
-    transform: translateY(0);
-    transition: all 0.3s ease;
-}
-
-.pokemon-BTN-grass {
-    border: 2px solid rgb(20, 160, 20);
+    border-radius: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: center;
     background: linear-gradient(145deg, rgb(24, 24, 24), rgb(12, 108, 12));
+    transition: all 0.25s ease-in-out;
 }
 
 .pokemon-BTN-fire {
     border: 2px solid rgb(159, 52, 52);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: center;
     background: linear-gradient(145deg, rgb(40, 20, 20), rgb(159, 52, 52));
+    transition: all 0.25s ease-in-out;
 }
 
 .pokemon-BTN-water {
     border: 2px solid rgb(116, 190, 209);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: center;
     background: linear-gradient(145deg, rgb(20, 24, 40), rgb(116, 190, 209));
+    transition: all 0.25s ease-in-out;
 }
 
 .pokemon-BTN-poison {
     border: 2px solid rgb(166, 114, 175);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: center;
     background: linear-gradient(145deg, rgb(40, 20, 40), rgb(166, 114, 175));
+    transition: all 0.25s ease-in-out;
 }
 
 .pokemon-BTN-electric {
     border: 2px solid rgb(189, 210, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: center;
     background: linear-gradient(145deg, rgb(40, 40, 10), rgb(189, 210, 0));
+    transition: all 0.25s ease-in-out;
 }
 
 .pokemon-BTN-bug {
     border: 2px solid rgb(160, 171, 41);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: center;
     background: linear-gradient(145deg, rgb(30, 30, 10), rgb(160, 171, 41));
+    transition: all 0.25s ease-in-out;
 }
 
 .pokemon-BTN-normal {
     border: 2px solid rgb(122, 87, 52);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: center;
     background: linear-gradient(145deg, rgb(30, 20, 10), rgb(122, 87, 52));
+    transition: all 0.25s ease-in-out;
 }
 
 .pokemon-BTN-ground {
     border: 2px solid rgb(189, 210, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: center;
     background: linear-gradient(145deg, rgb(40, 40, 20), rgb(189, 210, 0));
+    transition: all 0.25s ease-in-out;
 }
 
 .pokemon-BTN-fairy {
     border: 2px solid rgb(251, 217, 254);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: center;
     background: linear-gradient(145deg, rgb(40, 30, 40), rgb(251, 217, 254));
+    transition: all 0.25s ease-in-out;
 }
 
 .pokemon-BTN-fighting {
     border: 2px solid rgb(165, 73, 45);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: center;
     background: linear-gradient(145deg, rgb(40, 20, 20), rgb(165, 73, 45));
+    transition: all 0.25s ease-in-out;
 }
 
 .pokemon-BTN-psychic {
     border: 2px solid rgb(117, 139, 19);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: center;
     background: linear-gradient(145deg, rgb(20, 30, 10), rgb(117, 139, 19));
+    transition: all 0.25s ease-in-out;
 }
 
 .pokemon-BTN-rock {
     border: 2px solid rgb(102, 104, 95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: center;
     background: linear-gradient(145deg, rgb(30, 30, 30), rgb(102, 104, 95));
+    transition: all 0.25s ease-in-out;
 }
 
 .pokemon-BTN-ghost {
     border: 2px solid rgb(208, 208, 207);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: center;
     background: linear-gradient(145deg, rgb(40, 40, 40), rgb(208, 208, 207));
+    transition: all 0.25s ease-in-out;
 }
 
 .pokemon-BTN-dragon {
     border: 2px solid rgb(49, 71, 132);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: center;
     background: linear-gradient(145deg, rgb(20, 20, 40), rgb(49, 71, 132));
+    transition: all 0.25s ease-in-out;
 }
 
 .pokemon-BTN-ice {
     border: 2px solid rgb(230, 234, 246);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: center;
     background: linear-gradient(145deg, rgb(40, 50, 70), rgb(230, 234, 246));
+    transition: all 0.25s ease-in-out;
 }
 
 .pokemon-BTN-dark {
     border: 2px solid rgb(46, 51, 64);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: center;
     background: linear-gradient(145deg, rgb(20, 20, 30), rgb(46, 51, 64));
+    transition: all 0.25s ease-in-out;
 }
 
 .pokemon-BTN-steel {
     border: 2px solid rgb(72, 65, 60);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: center;
     background: linear-gradient(145deg, rgb(30, 30, 40), rgb(72, 65, 60));
+    transition: all 0.25s ease-in-out;
 }
 
 .pokemon-BTN-grass:hover,
@@ -310,7 +410,7 @@
 .pokemon-BTN-dark:hover,
 .pokemon-BTN-steel:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 10px rgba(219, 164, 0, 0.6);
+    box-shadow: 0 0px 10px rgba(219, 164, 0, 0.6);
 }
 
 

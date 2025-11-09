@@ -1,6 +1,6 @@
 function getHTMLpokemonsMainContent() {
   return  `
-  <div class="pokemon pokemon-bg-${singlePokemonType}" onclick="showDialog(${singlePokemon.id - 1})">
+  <div class="pokemon" onclick="showDialog(${singlePokemon.id - 1})">
     <p class="pokemon-names pokemon-bg-${singlePokemonType}">${pokemonNames}</p>
     <img 
         class="pokemon-images pokemon-bg-${singlePokemonType}"
@@ -69,14 +69,14 @@ function getHTMLNoPokemonFounded() {
 
 function getFilteredPokemonsHTML(pokemon) {
   return `
-      <div class="pokemon pokemon-bg-${singlePokemonType}" onclick="showDialogById(${pokemon.id})">
+      <div class="pokemon" onclick="showDialogById(${pokemon.id})">
         <p class="pokemon-names pokemon-bg-${singlePokemonType}">${pokemonNames}</p>
         <img 
             class="pokemon-images pokemon-bg-${singlePokemonType}"
             src="${pokemon.sprites.other['official-artwork'].front_default}">
             
             <span onclick="showDialogById(${pokemon.id})" 
-                  class="pokemon pokemon-BTN-${singlePokemonType}">
+                  class=" pokemon-BTN-${singlePokemonType}">
               ${singlePokemonType}
             </span>
       </div>`;
