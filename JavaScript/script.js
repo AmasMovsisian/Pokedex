@@ -1,25 +1,25 @@
-let limitofPokemons = 24;
+let limitofPokemons = 28;
 let loadedPokemons = 0;
 
 let pokemonNamesJSON;
 let pokemonNames;
 let singlePokemonsDataJSON; // Main Api JSon where all names are and results
 
-
 let singlePokemonArray = []; // All abalities for one Pokemon
 let singlePokemonType; // The type of Single Pokemon, like grass, poision!
 
-let pokemonContainerRef = document.getElementById('pokemonContainer');
+let pokemonContainerRef = document.getElementById("pokemonContainer");
 
 async function init() {
   await renderPokemonNames();
   await renderPokemonsDialog();
 }
 
-
 async function fetchPokemonNames(indexOfName) {
   try {
-    let response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limitofPokemons}`);
+    let response = await fetch(
+      `https://pokeapi.co/api/v2/pokemon?limit=${limitofPokemons}`
+    );
     pokemonNamesJSON = await response.json();
     let pokemonNamesData = pokemonNamesJSON.results[indexOfName].name;
     return pokemonNamesData;
@@ -30,25 +30,26 @@ async function fetchPokemonNames(indexOfName) {
 
 async function fetchSinglePokemonsData(id) {
   try {
-   let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
-   singlePokemonsDataJSON = await response.json();
-   return singlePokemonsDataJSON;  
+    let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+    singlePokemonsDataJSON = await response.json();
+    return singlePokemonsDataJSON;
   } catch (error) {
     console.log(error);
   }
-
 }
 
 async function renderPokemonNames() {
+  showLoader();
   for (let i = loadedPokemons; i < limitofPokemons; i++) {
-   pokemonNames = await fetchPokemonNames(i);
-   singlePokemon = await fetchSinglePokemonsData(i + 1);
-   singlePokemonArray.push(singlePokemon);
+    pokemonNames = await fetchPokemonNames(i);
+    singlePokemon = await fetchSinglePokemonsData(i + 1);
+    singlePokemonArray.push(singlePokemon);
 
-   singlePokemonType = singlePokemon.types[0].type.name;
-   pokemonContainerRef.innerHTML += getHTMLpokemonsMainContent();
+    singlePokemonType = singlePokemon.types[0].type.name;
+    pokemonContainerRef.innerHTML += getHTMLpokemonsMainContent();
   }
   loadedPokemons = limitofPokemons;
+  hideLoader();
   //For me to watch JSON Infos
   console.log(await pokemonNamesJSON);
   console.log(await singlePokemon);
@@ -61,52 +62,12 @@ function renderPokemonsDialog() {
   }
 }
 
-
-function getHTMLDialog(i) {
-  return `
-  <div class="dialog-container">
-
-    <div class="dialog-header">
-
-      <span><strong>Pokemon Id: ${singlePokemonArray[i].id}</strong></span>
-      <button class="dialog-close-BTN" onclick="closeDialog()">Close</button>
-    </div>
-
-    <div class="dialog-sliders">
-      <button class="dialog-prev" onclick="showPrev(${i})">←</button>
-      <button class="dialog-next" onclick="showNext(${i})">→</button>
-    </div>
-
- 
-
-      <div class="dialog-hero">
-        <p class="dialog-pokemon-name">
-            ${singlePokemonArray[i].name}
-        </p>
-        <img class="dialog-img dialog-bg-${singlePokemonArray[i].types[0].type.name}"
-            src="${singlePokemonArray[i].sprites.other['official-artwork'].front_default}">
-          <span class="dialog-type dialog-bg-${singlePokemonArray[i].types[0].type.name}">
-            ${singlePokemonArray[i].types[0].type.name}
-          </span>
-      </div>
-
-          <div class="main-infos" ><strong>
-            <p>Height : 0.${singlePokemonArray[i].height} m </p>
-            <p>Weight : ${singlePokemonArray[i].weight} kg</p>
-            <p>Base experience : ${singlePokemonArray[i].base_experience}</p>
-            <p>Abilities : ${singlePokemonArray[i].abilities[0].ability.name}</p>
-          </strong></div>
-
-
-  </div>`;
-}
-
 function showDialog(i) {
   let dialogRef = document.getElementById("dialogContainer");
   openDialog(i);
   dialogRef.showModal();
 
-    dialogRef.onclick = function(outside) {
+  dialogRef.onclick = function (outside) {
     if (outside.target === dialogRef) {
       closeDialog();
     }
@@ -114,11 +75,11 @@ function showDialog(i) {
 }
 
 function openDialog(i) {
-  let dialogRef = document.getElementById('dialogContainer');
+  let dialogRef = document.getElementById("dialogContainer");
   dialogRef.innerHTML = getHTMLDialog(i);
 }
 
-function closeDialog(){
+function closeDialog() {
   let dialogRef = document.getElementById("dialogContainer");
   dialogRef.close();
 }
@@ -140,6 +101,16 @@ function showPrev(currentIndex) {
 }
 
 async function loadMorePokemons() {
-  limitofPokemons += 16;
+  showLoader();
+  limitofPokemons += 14;
   await renderPokemonNames();
+  hideLoader();
+}
+
+function showLoader() {
+  document.getElementById("fullscreenLoader").style.display = "flex";
+}
+
+function hideLoader() {
+  document.getElementById("fullscreenLoader").style.display = "none";
 }

@@ -16,38 +16,41 @@
 
 <body onload="init()">
 
+    <div id="fullscreenLoader" class="fullscreen-loader">
+        <div class="pokeball-spinner">
+            <div class="pokeball-top"></div>
+            <div class="pokeball-bottom"></div>
+            <div class="pokeball-center"></div>
+        </div>
+        <div class="loader-text">Catching Pokémon...</div>
+    </div>
+
+
+
     <header>
-        <h1><a class="headlining" href="./index.html">Pokedex</a></h1>
-        <input class="search-BTN" id="searchBTN" type="text" placeholder="Search">
+        <div class="limitation">
+            <a class="headlining" href="./index.html">
+                <img class="logo" src="./img/pokemon_logo.png" alt="Logo">
+            </a>
+            <input class="search-BTN" id="searchBTN" type="search" placeholder="Search">
+        </div>
     </header>
 
-    <main>
-
+    <main class="main limitation">
         <section class="pokemon-container" id="pokemonContainer">
         </section>
 
-        <div class="button-parent">
-            <button onclick="loadMorePokemons()" class="load-more-btn" id="loadMoreBTN">Load more</button>
-        </div>
+        <button onclick="loadMorePokemons()" class="load-more-btn" id="loadMoreBTN">Load more</button>
 
         <dialog id="dialogContainer">
-            <!-- <div class="dialog-inner">
-                <img class="images" id="dialogImage" src="" alt="Image">
-                <p id="dialogName"></p>
-                <div>zwei buttons</div>
-                <span>
-                    <p id="dialogHeight">height</p>
-                    <p id="dialogWeight">weight</p>
-                    <p id="dialogBaseExp">Base Experience</p>
-                    <p id="dialogAbilities">Abilities</p>
-                </span>
-                <button onclick="closeDialog()">Close</button>
-            </div> -->
         </dialog>
-
-
-
     </main>
+
+    <footer>
+        <div class="limitation">
+            <a href="impressum.html">Impressum / Datenschutz</a>
+        </div>
+    </footer>
 
 </body>
 

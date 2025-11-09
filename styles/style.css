@@ -1,30 +1,197 @@
-body{
+body {
     margin: 0;
     padding: 0;
     background-color: rgba(24, 24, 24, 1);
     color: rgba(230, 230, 230, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
-header{
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: rgba(15, 15, 15, 1);
     padding: 24px;
-    box-shadow: 0px 1px 4px rgba(255, 215, 0, 0.2) ;
+    box-shadow: 0px 1px 4px rgba(255, 215, 0, 0.2);
     margin-bottom: 64px;
 }
 
+header,
+footer {
+    width: 100%;
+    background-color: rgba(15, 15, 15, 1);
+    box-shadow: 0px 1px 4px rgba(255, 215, 0, 0.2);
+
+}
+
+
+.limitation {
+    max-width: 1440px;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: center;
+    margin: 0 auto;
+    flex: 1;
+}
+
+
+.main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.fullscreen-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(20, 20, 20, 0.95);
+    /* dark overlay */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    font-size: 22px;
+    pointer-events: all;
+}
+
+.loader-text {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #f8f8f8;
+    text-shadow: 0 0 8px #ffcb05;
+    /* subtle glow like Pikachu spark */
+}
+
+.fullscreen-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(20, 20, 20, 0.95);
+    /* dark overlay */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* vertical center */
+    align-items: center;
+    /* horizontal center */
+    z-index: 9999;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    font-size: 22px;
+    pointer-events: all;
+}
+
+.loader-text {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #f8f8f8;
+    text-shadow: 0 0 8px #ffcd0571;
+}
+
+.pokeball-spinner {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: spin 1.2s linear infinite;
+}
+
+.pokeball-top {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(45deg, #f33 0%, #ff8b8b 100%);
+    border-radius: 100px 100px 0 0;
+    border: 3px solid #222;
+    box-sizing: border-box;
+}
+
+.pokeball-bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(45deg, #fff 0%, #ccc 100%);
+    border-radius: 0 0 100px 100px;
+    border: 3px solid #222;
+    box-sizing: border-box;
+}
+
+.pokeball-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: 50%;
+    border: 4px solid #222;
+    box-shadow: 0 0 10px #ffcb05, 0 0 20px #ffcb05 inset;
+}
+
+footer {
+    background-color: rgba(15, 15, 15, 1);
+    padding: 24px;
+    box-shadow: 0px 1px 4px rgba(255, 215, 0, 0.2);
+    margin-top: 64px;
+
+}
+
+a {
+    color: rgba(255, 215, 0, 1);
+    transition: all 0.25s ease-in-out;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
 @media (max-width: 500px) {
-    header{
+    header {
         flex-direction: column;
         padding: 0;
     }
 
-    h1{
+    h1 {
         margin: 0;
         padding: 0;
         margin-top: 32px;
         margin-bottom: 16px;
+    }
+
+    footer {
+        text-align: center;
     }
 }
