@@ -181,6 +181,8 @@ a:hover {
 @media (max-width: 500px) {
     .limitation {
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
         padding: 0;
     }
 
