@@ -7,7 +7,7 @@ function getHTMLpokemonsMainContent() {
         src="${singlePokemon.sprites.other['official-artwork'].front_default}">
         
         <span onclick="showDialog(${singlePokemon.id - 1})" 
-              class="pokemon pokemon-BTN-${singlePokemonType}">
+              class=" pokemon-BTN-${singlePokemonType}">
           ${singlePokemonType}
         </span>
   </div>`;

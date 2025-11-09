@@ -1,18 +1,15 @@
 let limitofPokemons = 28;
 let loadedPokemons = 0;
-
-let pokemonNamesJSON;
 let pokemonNames;
-let singlePokemonsDataJSON;
 
 let singlePokemonArray = [];
 let singlePokemonType;
 
 let pokemonContainerRef = document.getElementById("pokemonContainer");
+let scrollBtn = document.getElementById("scrollToTopBtn");
 
 async function init() {
   await renderPokemonNames();
-  await renderPokemonsDialog();
 }
 
 
@@ -53,15 +50,8 @@ async function renderPokemonNames() {
   }
   loadedPokemons = limitofPokemons;
   hideLoader();
-  console.log(await pokemonNamesJSON);
-  console.log(await singlePokemon);
-}
-
-
-function renderPokemonsDialog() {
-  for (let i = 0; i < singlePokemonArray.length; i++) {
-    console.log(singlePokemonArray[i].id);
-  }
+  // console.log(await pokemonNamesJSON);
+  // console.log(await singlePokemon);
 }
 
 
@@ -178,9 +168,27 @@ function showDialogById(id) {
   }
 }
 
+
 function showTab(tab, i, btn) {
   document.getElementById(`main-info-${i}`).style.display = tab === 'main' ? 'block' : 'none';
   document.getElementById(`extra-info-${i}`).style.display = tab === 'extra' ? 'block' : 'none';
   btn.parentNode.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
 }
+
+
+window.onscroll = function () {
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    scrollBtn.style.display = "block";
+  } else {
+    scrollBtn.style.display = "none";
+  }
+};
+
+
+scrollBtn.onclick = function () {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+};

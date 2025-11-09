@@ -1,3 +1,17 @@
+@font-face {
+  font-family: 'Fredoka';
+  src: url("../font/Fredoka-VariableFont_wdth\,wght.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Fredoka';
+  src: url("../font/Fredoka-VariableFont_wdth\,wght.ttf") format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -7,6 +21,15 @@ body {
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
+  font-family: 'Fredoka', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Fredoka', sans-serif;
+}
+
+input, textarea, select, button {
+  font-family: 'Fredoka', sans-serif;
 }
 
 header {
@@ -87,6 +110,7 @@ footer {
   font-family: "Arial", sans-serif;
   font-size: 22px;
   pointer-events: all;
+  font-family: 'Fredoka', sans-serif;
 }
 
 .loader-text {
@@ -94,6 +118,7 @@ footer {
   font-weight: bold;
   color: #f8f8f8;
   text-shadow: 0 0 8px #ffcd0571;
+  font-family: 'Fredoka', sans-serif;
 }
 
 .pokeball-spinner {
@@ -166,6 +191,55 @@ a:hover {
   font-weight: bold;
 }
 
+.scroll-to-top-btn {
+  display: none;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 99;
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, #ffcb05 30%, #f0b000 90%);
+  color: rgba(15, 15, 15, 1);
+  font-size: 26px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 12px #ffcb05, 0 0 25px rgba(255, 215, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.scroll-to-top-btn {
+  display: none;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 99;
+  width: 26px;
+  height: 26px;
+  border: none;
+  border-radius: 16px;
+  background-color: rgba(255, 215, 0, 1);
+  color: rgba(15, 15, 15, 1);
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+.scroll-to-top-btn:hover {
+  opacity: 1;
+  background-color: #ffcb05;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+  transform: translateY(-4px);
+  color: #fff;
+}
+
+
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -193,6 +267,10 @@ a:hover {
     padding: 0;
     margin-top: 32px;
     margin-bottom: 16px;
+  }
+
+  .scroll-to-top-btn{
+    right: 47%;
   }
 
   footer {

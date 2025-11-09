@@ -97,7 +97,6 @@ a {
   font-family: "Arial", sans-serif;
   font-size: 18px;
   pointer-events: all;
-  /* verhindert Klicks auf die Seite */
 }
 
 .spinner {
