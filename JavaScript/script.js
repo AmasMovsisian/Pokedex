@@ -50,8 +50,6 @@ async function renderPokemonNames() {
   }
   loadedPokemons = limitofPokemons;
   hideLoader();
-  // console.log(await pokemonNamesJSON);
-  // console.log(await singlePokemon);
 }
 
 

@@ -35,7 +35,9 @@
             <a class="headlining" href="./index.html">
                 <img class="logo" src="./img/pokemon_logo.png" alt="Logo">
             </a>
-            <input class="search-BTN" id="searchBTN" type="text" placeholder="Search" oninput="searchPokemon()">
+                 <input class="search-BTN" id="searchBTN" type="text" placeholder="Search" oninput="searchPokemon()"
+                    onfocus="if(this.value===''){this.placeholder='Please at least 3 letters!'}"
+                    onblur="if(this.value===''){this.placeholder='Search'}">
         </div>
     </header>
 
